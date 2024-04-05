@@ -3,6 +3,7 @@ const  deSelect = document.querySelector('#from').value;
 const aSelect = document.querySelector('#to').value;
 const resultado = document.querySelector('#result-container');
 
+//Tasas de cambio segun Google
 const conversion = {
     usd: {
         eur: 0.92,

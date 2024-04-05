@@ -1,8 +1,3 @@
-// const btnLike = document.querySelector('like-btn');
-// const addComentario = document.querySelector('add-comment');
-// const btnAddComentario = document.querySelector('add-comment-btn');
-
-
 document.addEventListener('DOMContentLoaded', function () {
     const likeBtn = document.querySelector('.like-btn');
     const likeCount = document.querySelector('.like-count');
@@ -11,12 +6,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const commentInput = document.querySelector('.comment-input');
     const addCommentBtn = document.querySelector('.add-comment-btn');
 
-    let likes = parseInt(localStorage.getItem('likes')) || 0;    //uso de LocalStorage para almacenar like y comentarios
+    let likes = parseInt(localStorage.getItem('likes')) || 0;//uso de LocalStorage para almacenar like y comentarios
     let comments = JSON.parse(localStorage.getItem('comments')) || [];
 
     likeCount.textContent = likes;
-
-    // Función para incrementar o decrementar el contador de likes
+    // Función para incremento o decremento
     function like() {
         if (likeBtn.textContent === 'Me gusta') {
             likes++;
@@ -29,8 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         localStorage.setItem('likes', likes.toString());
     }
-
-    // Función para dar like o dislike a la imagen
+    // Función para dar like o dislike
     function imagenLike() {
         if (postImage.classList.contains('liked')) {
             likes--;
@@ -59,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function () {
             commentInput.value = ''; // Limpiar el campo de entrada
         }
     }
-
     // Asignar eventos a los elementos del DOM
     likeBtn.addEventListener('click', like);
     postImage.addEventListener('dblclick', imagenLike);
@@ -74,4 +66,3 @@ document.addEventListener('DOMContentLoaded', function () {
         commentsContainer.appendChild(commentElement);
     });
 });
-
