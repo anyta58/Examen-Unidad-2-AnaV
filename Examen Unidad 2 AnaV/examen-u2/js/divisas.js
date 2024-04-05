@@ -1,6 +1,6 @@
-const InputCantidad = document.querySelector('#amount').value;
-const  deSelect = document.querySelector('#from').value;
-const aSelect = document.querySelector('#to').value;
+const InputCantidad = document.querySelector('#amount');
+const  deSelect = document.querySelector('#from');
+const aSelect = document.querySelector('#to');
 const resultado = document.querySelector('#result-container');
 
 //Tasas de cambio segun Google
@@ -25,11 +25,12 @@ function convertirDivisa() {
     const aDivisa = aSelect.value;
 
     if (isNaN(cantidad)) {
-        resultContainer.textContent = 'Ingrese una cantidad válida.';
+        resultado.textContent = 'Ingrese una cantidad válida.';
     } else {
         const tarifa = conversion[deDivisa][aDivisa];
         const convertirCantidad = (cantidad * tarifa).toFixed(2);
-        resultContainer.textContent = `${cantidad} ${deDivisa.toUpperCase()} = ${convertirCantidad} ${aDivisa.toUpperCase()}`;
+        resultado.textContent = `${cantidad} ${deDivisa.toUpperCase()} = 
+        ${convertirCantidad} ${aDivisa.toUpperCase()}`;
     }
 }
 
